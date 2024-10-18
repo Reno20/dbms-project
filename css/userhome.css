@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins",sans-serif;
+}
+.container{
+    height: 100vh;
+    background: url("../images/loginbg.jpeg") no-repeat;
+    background-size: cover;
+    background-position: center;
+} 
+.container .navigation{
+    width: 100%;
+    height: 110px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.navigation .logo{
+    float: left;
+    height: auto;
+    width: 120px;
+    color: ghostwhite;
+    padding: 20px 100px;
+    font-size: 50px;
+    font-family: "Caveat";
+}
+
+.navigation ul{
+    float: right;
+    margin-right: 20px;
+}
+.navigation ul li{
+    list-style: none;
+    padding: 0px 8px;
+    display: inline-block;
+    line-height: 100px;
+}
+.navigation ul li a{
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    padding: 6px 13px;
+    transition: .4s;
+}
+
+.navigation ul li a.active,
+.navigation ul li a:hover{
+    background: rgb(255, 115, 0);
+    border-radius: 10px;
+}
+
+.container .center{
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%,-50%);
+    width: 55%;
+}
+
+.center h1{
+    font-family: "Poppins";
+    color: white;
+    font-weight: bold;
+}
