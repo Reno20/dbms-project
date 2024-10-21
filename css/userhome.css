@@ -66,3 +66,10 @@
     color: white;
     font-weight: bold;
 }
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgb(82, 6, 97);
+    color: #fff;
+    margin-top: 0px;
+}
