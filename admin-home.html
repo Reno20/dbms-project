@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Home Page</title>
+  <link rel="stylesheet" href="css/admin.css">
+  <script type="module" src="js/firebase.mjs"></script>
+</head>
+<body>
+    <div class="container">
+  <header>
+    <h1>Admin Dashboard</h1>
+    <nav class="navigation">
+      <button onclick="showSection('addEvent')">Add Auction Event</button>
+      <button onclick="showSection('addItem')">Add Auction Item</button>
+      <button onclick="navigateToEvents()">Show Events</button>
+    </nav>
+  </header>
+  
+  <!-- Add Auction Event Section -->
+  <section id="addEvent" class="admin-section">
+    <h2>Add Auction Event</h2>
+    <form id="eventForm">
+      <label for="eventTitle">Event Title:</label>
+      <input type="text" id="eventTitle" name="eventTitle" required>
+      
+      <label for="eventDate">Date:</label>
+      <input type="date" id="eventDate" name="eventDate" required>
+      
+      <label for="eventDescription">Description:</label>
+      <textarea id="eventDescription" name="eventDescription" required></textarea>
+      
+      <label for="eventLocation">Location:</label>
+      <input type="text" id="eventLocation" name="eventLocation" required>
+      
+      <button type="button" onclick="addEvent()">Add Event</button>
+    </form>
+  </section>
+
+  <!-- Add Auction Item Section -->
+  <section id="addItem" class="admin-section" style="display: none;">
+    <h2>Add Auction Item</h2>
+    <form id="itemForm">
+      <label for="itemName">Item Name:</label>
+      <input type="text" id="itemName" name="itemName" required>
+      
+      <label for="itemOrigin">Place of Origin:</label>
+      <input type="text" id="itemOrigin" name="itemOrigin" required>
+      
+      <label for="itemYear">Year of Origin:</label>
+      <input type="number" id="itemYear" name="itemYear" required>
+      
+      <label for="itemPrice">Highest Price:</label>
+      <input type="number" id="itemPrice" name="itemPrice" required>
+      
+      <label for="itemAuthor">Author:</label>
+      <input type="text" id="itemAuthor" name="itemAuthor" required>
+      
+      <label for="itemDescription">Description:</label>
+      <textarea id="itemDescription" name="itemDescription" required></textarea>
+    
+        <label for="eventSelect">Select Event:</label>
+        <select id="eventSelect">
+  
+        </select>
+
+      
+      <button type="button" onclick="addItem()">Add Item</button>
+    </form>
+  </section>
+  </div>
+  <script>
+    function navigateToEvents() { 
+        window.location.href = 'events.html';
+     } 
+
+  </script>
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>

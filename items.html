@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Items</title>
+  <link rel="stylesheet" href="css/items.css">
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+    import { collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyDcnbrIJpJRy8YBzPpcGzna4ESOpS_AcSU",
+        authDomain: "ams2024-14c45.firebaseapp.com",
+        projectId: "ams2024-14c45",
+        storageBucket: "ams2024-14c45.firebasestorage.app",
+        messagingSenderId: "36219047437",
+        appId: "1:36219047437:web:0826a33501a6cf1d758f44",
+        measurementId: "G-T6LRP7VGP7"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Function to get query parameters from URL
+    function getQueryParams() {
+        const params = new URLSearchParams(window.location.search);
+        return Object.fromEntries(params.entries());
+    }
+
+    // Function to display items for the selected event
+    async function displayItemsByEvent(eventId) {
+        const itemsList = document.getElementById("items");
+        if (itemsList) { // Ensure element exists
+            itemsList.innerHTML = ""; // Clear previous items
+
+            try {
+                const itemsCollection = collection(db, "items");
+                const q = query(itemsCollection, where("eventId", "==", eventId));
+                const querySnapshot = await getDocs(q);
+
+                if (querySnapshot.empty) {
+                    itemsList.textContent = "No items found for this event.";
+                    return;
+                }
+
+                querySnapshot.forEach((doc) => {
+                    const item = doc.data();
+                    const itemElement = document.createElement("div");
+                    itemElement.className = "item-card";
+                    itemElement.innerHTML = `
+                        <h3>${item.name} - ${item.origin} (${item.year})</h3>
+                        <p><strong>Highest Price:</strong> ${item.price}</p>
+                        <p><strong>Author:</strong> ${item.author}</p>
+                        <p><strong>Description:</strong> ${item.description}</p>
+                    `;
+                    itemsList.appendChild(itemElement);
+                });
+            } catch (error) {
+                console.error("Error displaying items: ", error);
+                itemsList.textContent = "Error displaying items.";
+            }
+        }
+    }
+
+    // Initialize data on page load
+    window.onload = function () {
+        const params = getQueryParams();
+        const eventId = params.eventId;
+        if (eventId) {
+            displayItemsByEvent(eventId);
+        } else {
+            console.error("No event ID found in URL");
+        }
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Event Items</h1>
+    </header>
+    <section id="items" class="user-section">
+      <!-- Items will be displayed here -->
+    </section>
+  </div>
+</body>
+</html>

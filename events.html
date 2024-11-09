@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/firebase.mjs"></script>
+</head>
+<body>
+  <header>
+    <h1>Auction Events and Items</h1>
+    <nav>
+      <button onclick="showSection('presentEvents')">Present Events</button>
+      <button onclick="showSection('pastEvents')">Past Events</button>
+      <button onclick="showSection('upcomingEvents')">Upcoming Events</button>
+    </nav>
+  </header>
+
+  <!-- Events Sections -->
+  <section id="presentEvents" class="user-section">
+    <h2>Present Events</h2>
+    <div id="presentEventsList">
+      <!-- Display present events dynamically -->
+    </div>
+  </section>
+
+  <section id="pastEvents" class="user-section" style="display: none;">
+    <h2>Past Events</h2>
+    <div id="pastEventsList">
+      <!-- Display past events dynamically -->
+    </div>
+  </section>
+
+  <section id="upcomingEvents" class="user-section" style="display: none;">
+    <h2>Upcoming Events</h2>
+    <div id="upcomingEventsList">
+      <!-- Display upcoming events dynamically -->
+    </div>
+  </section>
+
+  <!-- Auction Items Section -->
+  <section id="itemsList" class="user-section" style="display: none;">
+    <h2>Auction Items for Selected Event</h2>
+    <div id="items">
+      <!-- Display items dynamically based on selected event -->
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2024 AGM. All Rights Reserved.</p>
+  </footer>
+
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>

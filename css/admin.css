@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height:150vh;
+    background: url("../images/loginbg.jpeg") no-repeat;
+    background-size:auto;
+    background-position: center;
+}
+.container .navigation{
+    width: 100%;
+    height: 60px;
+}
+header {
+    height: 110px;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+header h1 {
+    font-family: "Caveat", cursive;
+    font-size: 40px;
+    color: ghostwhite;
+}
+
+header nav button {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 8px 15px;
+    font-size: 18px;
+    margin: 0 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.4s;
+    float: right;
+}
+
+header nav button:hover,
+header nav button.active {
+    background: rgb(255, 115, 0);
+    color: white;
+}
+
+.admin-section {
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    display: none; /* Hidden by default, shown when active */
+}
+
+.admin-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: rgb(255, 115, 0);
+}
+
+form label, form input, form textarea, form select, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+form input, form textarea, form select {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+form button {
+    width: auto;
+    padding: 10px 20px;
+    background-color: rgb(255, 115, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+form button:hover {
+    background-color: rgb(230, 90, 0);
+}
+
+
+
+/* Utility to show active sections */
+.show {
+    display: block;
+}
