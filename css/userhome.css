@@ -6,79 +6,70 @@
     padding: 0;
     font-family: "Poppins",sans-serif;
 }
-.container {
-    min-height: 100vh;
+.container{
+    height: 100vh;
     background: url("../images/loginbg.jpeg") no-repeat;
     background-size: cover;
     background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.navigation {
+} 
+.container .navigation{
     width: 100%;
     height: 110px;
     background: rgba(0, 0, 0, 0.4);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    box-sizing: border-box;
 }
 
-.logo {
+.navigation .logo{
+    float: left;
     height: auto;
+    width: 120px;
     color: ghostwhite;
+    padding: 20px 100px;
     font-size: 50px;
     font-family: "Caveat";
 }
 
-.navigation ul {
-    display: flex;
-    align-items: center;
+.navigation ul{
+    float: right;
+    margin-right: 20px;
 }
-
-.navigation ul li {
+.navigation ul li{
     list-style: none;
-    padding: 0 8px;
+    padding: 0px 8px;
+    display: inline-block;
+    line-height: 100px;
 }
-
-.navigation ul li a {
+.navigation ul li a{
     text-decoration: none;
     font-size: 25px;
     color: white;
+    font-family: "Poppins", sans-serif;
     padding: 6px 13px;
     transition: .4s;
 }
 
 .navigation ul li a.active,
-.navigation ul li a:hover {
+.navigation ul li a:hover{
     background: rgb(255, 115, 0);
     border-radius: 10px;
 }
 
-
-.center {
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+.container .center{
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%,-50%);
+    width: 55%;
 }
 
-.center h1 {
+.center h1{
     font-family: "Poppins";
     color: white;
     font-weight: bold;
 }
-
 footer {
     text-align: center;
     padding: 20px;
     background: rgb(82, 6, 97);
     color: #fff;
-    width: 100%;
-    box-sizing: border-box;
+    margin-top: 0px;
 }
